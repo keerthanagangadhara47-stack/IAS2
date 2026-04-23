@@ -29,6 +29,10 @@ app.use('/api/users', userRoutes);
 app.use('/api/quizzes', quizRoutes);
 app.use('/api/subjects', subjectRoutes);
 
+app.get('/', (req, res) => {
+    res.send('Test successful');
+});
+
 // Error Handling Middleware
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
